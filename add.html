@@ -7,6 +7,38 @@
     <title>Add Flat</title>
   </head>
   <body>
+    <header>
+      <div>
+        <h1>Add your property for sale</h1>
+        <h3>Yes, you can sell where you live and get cash!!</h3>
+      </div>
+    </header>
+
+    <form id="addProperty">
+      <p>Add Property</p>
+      <p>Img</p>
+      <input
+        type="text"
+        name="imgage"
+        placeholder="https://google.com/logo.png"
+      />
+      <p>Price, Eur</p>
+      <input type="text" name="price" placeholder="3000" />
+      <p>Desciprion</p>
+      <textarea
+        name="description"
+        cols="30"
+        rows="10"
+        placeholder="anything you would like to say?"
+      ></textarea>
+      <p>City</p>
+      <select name="city">
+        <option value="Vilnius">Vilnius</option>
+        <option value="Kaunas">Kaunas</option>
+        <option value="Klaipeda">Klaipeda</option>
+      </select>
+      <button type="submit">Add property</button>
+    </form>
     <script src="addFlat.js"></script>
   </body>
 </html>
