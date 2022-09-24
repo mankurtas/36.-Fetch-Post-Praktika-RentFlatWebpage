@@ -9,21 +9,22 @@ console.log(newFlatData);
 addProperty.addEventListener("submit", async (e) => {
   e.preventDefault();
   const addFlatdata = new FormData(addProperty);
-  console.log(addFlatdata);
   const newFlatData = Object.fromEntries(addFlatdata);
   console.log(newFlatData);
-  newFlatData.price = Number(newFlatData.price);
-  const last = newFlatData.description;
-  const third = newFlatData.price;
-  const second = newFlatData.city;
-  //change object sequince
 
-  console.log(newFlatData);
+  newFlatData.price = Number(newFlatData.price);
+  const dataToserver = {
+    image: newFlatData.image,
+    city: newFlatData.city,
+    price: Number(newFlatData.price),
+    description: newFlatData.description,
+  };
+
   try {
     const response = await fetch(urlBase, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newFlatData),
+      body: JSON.stringify(dataToserver),
     });
 
     const data = await response.json();
@@ -33,9 +34,3 @@ addProperty.addEventListener("submit", async (e) => {
     console.log(error);
   }
 });
-
-// const addNewFalt = async () => {
-//
-// };
-
-// addNewFalt();
