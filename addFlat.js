@@ -30,6 +30,9 @@ addProperty.addEventListener("submit", async (e) => {
     const data = await response.json();
 
     console.log(data);
+    location.reload();
+    const messege = document.getElementById("messege");
+    messege.innerHTML = "Property added";
   } catch (error) {
     console.log(error);
   }

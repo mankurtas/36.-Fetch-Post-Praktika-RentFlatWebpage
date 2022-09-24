@@ -1,13 +1,19 @@
 const urlBase = "https://robust-safe-crafter.glitch.me/";
 const divFlats = document.getElementById("flats");
+const vilnius = document.getElementById("vilnius");
+const kaunas = document.getElementById("kaunas");
+const klaipeda = document.getElementById("klaipeda");
+
+let flatsList = [];
 
 const flatsData = async () => {
   try {
     const response = await fetch(urlBase);
     const data = await response.json();
-
+    flatsList = data;
     console.log(data);
     createCard(data);
+    console.dir(divFlats);
   } catch (error) {
     console.log(error);
   }
@@ -41,3 +47,28 @@ const createCard = (info) => {
     divFlats.append(div);
   });
 };
+
+vilnius.addEventListener("click", (e) => {
+  e.preventDefault();
+  divFlats.innerHTML = "";
+
+  const vilnius = flatsList.filter((element) => element.city == "Vilnius");
+
+  createCard(vilnius);
+});
+kaunas.addEventListener("click", (e) => {
+  e.preventDefault();
+  divFlats.innerHTML = "";
+
+  const kaunas = flatsList.filter((element) => element.city == "Kaunas");
+
+  createCard(kaunas);
+});
+klaipeda.addEventListener("click", (e) => {
+  e.preventDefault();
+  divFlats.innerHTML = "";
+
+  const klaipeda = flatsList.filter((element) => element.city == "Klaipeda");
+
+  createCard(klaipeda);
+});

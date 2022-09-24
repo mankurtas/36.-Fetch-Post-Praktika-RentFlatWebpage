@@ -2,11 +2,43 @@
   box-sizing: border-box;
 }
 
-#flats {
-  display: flex;
+header {
+  background-color: rgba(22, 211, 164, 0.788);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
 }
 
-#flats,
+header > div {
+  margin: 0 auto;
+  width: 80%;
+  color: aliceblue;
+}
+
+#content {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.filter {
+  display: flex;
+  margin-bottom: 2rem;
+  justify-content: space-between;
+}
+
+#flats {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 img {
+  height: 100px;
+  width: 100%;
+}
+.cardContainer {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 40%;
+  margin: 0.2rem;
   width: 150px;
 }
