@@ -9,6 +9,7 @@ console.log(newFlatData);
 addProperty.addEventListener("submit", async (e) => {
   e.preventDefault();
   const addFlatdata = new FormData(addProperty);
+  console.dir(addProperty);
   const newFlatData = Object.fromEntries(addFlatdata);
   console.log(newFlatData);
 
@@ -30,8 +31,14 @@ addProperty.addEventListener("submit", async (e) => {
     const data = await response.json();
 
     console.log(data);
-    location.reload();
+    addProperty[0].value = "";
+    addProperty[1].value = "";
+    addProperty[2].value = "";
+    addProperty[3].value = "";
+    addProperty[4].value = "Vilnius";
+
     const messege = document.getElementById("messege");
+    messege.style.color = "green";
     messege.innerHTML = "Property added";
   } catch (error) {
     console.log(error);

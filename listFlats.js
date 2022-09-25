@@ -4,6 +4,8 @@ const vilnius = document.getElementById("vilnius");
 const kaunas = document.getElementById("kaunas");
 const klaipeda = document.getElementById("klaipeda");
 
+const buttons = document.querySelectorAll("button");
+
 let flatsList = [];
 
 const flatsData = async () => {
@@ -48,6 +50,8 @@ const createCard = (info) => {
   });
 };
 
+// Jei atgal nebepazymetas fitlars listinti visus
+
 vilnius.addEventListener("click", (e) => {
   e.preventDefault();
   divFlats.innerHTML = "";
@@ -71,4 +75,10 @@ klaipeda.addEventListener("click", (e) => {
   const klaipeda = flatsList.filter((element) => element.city == "Klaipeda");
 
   createCard(klaipeda);
+});
+
+buttons.addEventListener("blur", (e) => {
+  e.preventDefault();
+  divFlats.innerHTML = "";
+  createCard(flatsList);
 });
