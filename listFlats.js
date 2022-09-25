@@ -76,9 +76,3 @@ klaipeda.addEventListener("click", (e) => {
 
   createCard(klaipeda);
 });
-
-buttons.addEventListener("blur", (e) => {
-  e.preventDefault();
-  divFlats.innerHTML = "";
-  createCard(flatsList);
-});
